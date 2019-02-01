@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Balltastic)
+project(SMALL_RTS)
 
 if(UNIX AND APPLE)
     set(PLATFORM "osx" )
@@ -29,10 +29,12 @@ set(ITCHIO_USER     "")
 add_executable(
         ${PROJECT_NAME}
         main.cpp
-        Source/Balltastic.cpp
-        Source/Balltastic.h
+        Source/SMALL_RTS.cpp
+        Source/SMALL_RTS.h
         Source/Vector.h
-        Source/Vector.cpp)
+        Source/Vector.cpp
+        Source/Ally.cpp
+        Source/Ally.h)
 
 ## library includes
 target_include_directories(

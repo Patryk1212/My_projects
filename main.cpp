@@ -1,8 +1,10 @@
 #include <iostream>
-#include "Source/Balltastic.h"
+
+#include "Source/SMALL_RTS.h"
+
 int main()
 {
-    Balltastic game;
+    SMALL_RTS game;
     if (!game.init())
     {
         return -1;

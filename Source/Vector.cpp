@@ -1,44 +1,61 @@
 //
 // Created by ps2-ostrowski on 20/11/2018.
 //
-
-#include "Vector.h"
 #include <cmath>
 
-Vector::Vector(float x1, float y1) {
-        x =x1;
-        y = y1;
+#include "Vector.h"
+
+Vector::Vector(float x, float y, int speed)
+{
+    this->x = x;
+    this->y = y;
+    this->speed = speed;
 }
 
-Vector::~Vector() {
+Vector::~Vector()
+{
 
 }
 
-void Vector::setX(float x1) {
-        x = x1;
+void Vector::setX(float x)
+{
+    this->x = x;
 }
 
-void Vector::setY(float y1) {
-        y = y1;
+void Vector::setY(float y)
+{
+    this->y = y;
 }
 
-float Vector::getX() {
-        return x;
+void Vector::setSpeed(int speed)
+{
+    this->speed = speed;
 }
 
-float Vector::getY() {
-        return y;
+float Vector::getX() const
+{
+    return x;
+}
+
+float Vector::getY() const
+{
+    return y;
+}
+
+int Vector::getSpeed() const
+{
+    return speed;
 }
 
 void Vector::normalise()
 {
-        speed = sqrt(pow(x,2) + pow(y,2));
+    float magnitude = sqrt(pow(x,2) + pow(y,2));
 
-        x /= speed;
-        y /= speed;
+    x /= magnitude;
+    y /= magnitude;
 }
 
 Vector Vector::operator*(float scalar)
 {
-        return Vector(scalar*x, scalar*y);
+    return Vector(scalar*x, scalar*y);
 }
