@@ -13,3 +13,13 @@ Ally::~Ally()
 {
 
 }
+
+void Ally::setActive(bool active)
+{
+    this->active = active;
+}
+
+bool Ally::getActive() const
+{
+    return active;
+}

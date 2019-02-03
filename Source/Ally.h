@@ -15,7 +15,10 @@ public:
     ~Ally();
 
     friend class SMALL_RTS;
-    //friend void setAllySprite(Ally &ally);
+
+    void setActive(bool active);
+
+    bool getActive() const;
 
 private:
 
@@ -29,6 +32,7 @@ private:
 
     int health = 0;
     int damage = 0;
+    bool active = false;
 
 };
 

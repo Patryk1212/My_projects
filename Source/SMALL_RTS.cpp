@@ -67,6 +67,12 @@ void SMALL_RTS::clickHandler(const ASGE::SharedEventData data)
     auto click = static_cast<const ASGE::ClickEvent*>(data.get());
     double x_pos = click->xpos;
     double y_pos = click->ypos;
+
+    if(isInside(tank, x_pos, y_pos))
+    {
+
+    }
+
 }
 
 
@@ -75,6 +81,7 @@ void SMALL_RTS::update(const ASGE::GameTime &us)
     //Ally* ally = new Ally;
 
     //setAllySprite(ally->image);
+
 
 }
 
@@ -107,4 +114,12 @@ void SMALL_RTS::addAlly()
 void SMALL_RTS::displayAllySprite(ASGE::Sprite *image)
 {
     renderer->renderSprite(*image);
+}
+
+bool SMALL_RTS::isInside(const ASGE::Sprite* sprite, float x, float y) const
+{
+    float width = sprite->xPos() + sprite->width();
+    float height = sprite->yPos() + sprite->height();
+
+    return x > sprite->xPos() && x < width && y > sprite->yPos() && y < height;
 }

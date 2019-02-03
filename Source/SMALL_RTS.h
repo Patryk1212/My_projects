@@ -28,7 +28,9 @@ private:
 
     void addAlly();
 
-    //Ally ally;
+    bool isInside(const ASGE::Sprite* sprite, float x, float y) const;
+
+    Ally ally;
     ASGE::Sprite* tank = nullptr;
 
     int  key_callback_id = -1;
@@ -37,3 +39,5 @@ private:
     int ally_number = 0;
 
 };
+
+
